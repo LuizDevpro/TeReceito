@@ -4,21 +4,18 @@
 
         <div class="input-card w-full max-w-md sm:max-w-lg p-5 sm:p-6">
 
-            <div class="flex justify-center items-center mb-3 sm:mb-4 gap-2">
+            <div class="flex justify-center items-center mb-1 -mt-6">
                 <img src="{{ asset('assets/images/logo.png') }}" alt="Logo"
-                    class="h-9 w-9 sm:h-11 sm:w-11 rounded-full object-cover select-none">
-                <p class="text-red-700 text-xl sm:text-2xl italic font-extrabold">
-                    {{ env('APP_NAME') }}
-                </p>
+                    class="w-full max-w-30 md:max-w-35 lg:max-w-38 h-auto object-contain select-none">
             </div>
 
-            <div class="h-px w-full bg-red-600 my-2"></div>
+            <div class="h-px w-full bg-orange-600 my-2"></div>
 
             <p class="title-1 text-center mb-4 text-xl sm:text-2xl">
                 Entrar
             </p>
 
-            <form action="{{ }}" method="post" novalidate>
+            <form action="{{ route('login.submit') }}" method="post" novalidate>
                 @csrf
 
                 <div class="mb-3">
@@ -55,17 +52,17 @@
                 </div>
 
                 <div class="text-center mb-3">
-                    <button type="submit" class="btn-red w-full sm:w-auto px-7 py-1.5 text-sm">
-                        Entrar
+                    <button type="submit" class="btn-orange w-full sm:w-auto px-7 py-1.5 text-sm">
+                        ENTRAR
                     </button>
                 </div>
 
             </form>
 
             <div
-                class="flex flex-col sm:flex-row text-white text-sm text-center mt-2 justify-center items-center gap-1">
+                class="flex flex-col sm:flex-row text-black text-sm text-center mt-2 justify-center items-center gap-1">
                 <p class="italic">Ainda não tem uma conta?</p>
-                <a href="{{ }}" class="link">Cadastre-se</a>
+                <a href="{{ route('register') }}" class="link">Cadastre-se</a>
             </div>
 
         </div>
