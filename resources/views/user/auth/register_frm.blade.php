@@ -6,39 +6,39 @@
 
             <div class="flex justify-center items-center mb-1 -mt-6">
                 <img src="{{ asset('assets/images/logo.png') }}" alt="Logo"
-                    class="w-full max-w-[100px] md:max-w-[120px] lg:max-w-[150px] h-auto object-contain select-none">
+                    class="w-full max-w-30 md:max-w-35 lg:max-w-38 h-auto object-contain select-none">
             </div>
 
             <div class="h-px w-full bg-orange my-1"></div>
 
             <p class="title-1 text-center mb-1 text-sm sm:text-base">
-                Cadastrar-se
+                Cadastre-se
             </p>
 
             <form action="{{ route('register.submit') }}" method="post" novalidate>
                 @csrf
 
                 <div class="mb-0.5">
-                    <label for="name_surname" class="label block text-xs">
-                        Nome e Sobrenome
+                    <label for="username" class="label block text-sm">
+                        Nome de Usuário
                     </label>
-                    <input type="text" class="input w-full py-0.5 text-sm" id="name_surname" name="name_surname"
-                        placeholder="Ex: José Silva" value="{{ old('name_surname') }}">
-                    {{-- {!! showValidationError('name_surname', $errors) !!}
-                    {!! showServerError() !!} --}}
+                    <input type="text" class="input w-full py-0.5 text-sm" id="username" name="username"
+                        placeholder="Ex: José Silva" value="{{ old('username') }}">
+                    {!! showValidationError('username', $errors) !!}
+                    {!! showServerError() !!}
                 </div>
 
                 <div class="mb-0.5">
-                    <label for="email" class="label block text-xs">
+                    <label for="email" class="label block text-sm">
                         E-mail
                     </label>
                     <input type="email" class="input w-full py-0.5 text-sm" id="email" name="email"
                         placeholder="seuemail@gmail.com" value="{{ old('email') }}">
-                    {{-- {!! showValidationError('email', $errors) !!} --}}
+                    {!! showValidationError('email', $errors) !!}
                 </div>
 
                 <div class="mb-0.5">
-                    <label for="password" class="label block text-xs">
+                    <label for="password" class="label block text-sm">
                         Senha
                     </label>
 
@@ -50,11 +50,11 @@
                             id="togglePassword"></i>
                     </div>
 
-                    {{-- {!! showValidationError('password', $errors) !!} --}}
+                    {!! showValidationError('password', $errors) !!}
                 </div>
 
                 <div class="mb-4">
-                    <label for="password_confirmation" class="label block text-xs">
+                    <label for="password_confirmation" class="label block text-sm">
                         Confirmar Senha
                     </label>
 
@@ -68,17 +68,17 @@
                 </div>
 
                 <div class="text-center mb-1">
-                    <button type="submit" class="btn-red w-full sm:w-auto px-4 py-0.5 text-sm">
-                        Cadastrar-se
+                    <button type="submit" class="btn-orange w-full sm:w-auto px-4 py-0.5 text-sm">
+                        CADASTRE-ME
                     </button>
                 </div>
 
             </form>
 
             <div
-                class="flex flex-col sm:flex-row text-white text-xs text-center mt-1 justify-center items-center gap-1">
+                class="flex flex-col sm:flex-row text-black text-sm text-center mt-1 justify-center items-center gap-1">
                 <p class="italic">Já tem uma conta?</p>
-                <a href="#" class="link">
+                <a href="{{ route('login') }}" class="link">
                     Entre aqui
                 </a>
             </div>
